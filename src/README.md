@@ -12,3 +12,5 @@ Instructions
 Note: MSMBuilder's ConvertDataToHDF.py also handles this, but requires actually *reading* the trajectories to determine their length.  This makes the current MSMB approach way too slow for our dataset.  See issue 326 on msmbuilder GitHub.
 4.  Submit code/fahprocessing/convert.sh to the queue, which will build the msmbuilder project using ConvertDataToHDF.py
 5.  Cluster using protocol to be determined by KAB
+6.  BuildMSM and extract strongly connected component.  Build a new project that includes ONLY the trajectory chunks that are strongly connected.  This step of protocol is not present in most MSM pipelines but may be useful for achieving accurate clusterings of datasets built from homology model simulations, some of which are possibly garbage.  Preliminary script to do this is goodtrim.py
+7.  Recluster final trimmed dataset.
