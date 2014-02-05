@@ -1,0 +1,39 @@
+import shutil
+import os
+import tarfile
+import itertools
+import glob
+
+source_dir = "/cbio/jclab/projects/fah/fah-data/PROJ8900/"
+staging_dir = "./PROJ8900/"
+min_gen = 250
+
+def mkdir(path):
+    if not os.path.exists(path):
+        os.mkdir(path)
+
+for run in itertools.count():
+    if not os.path.exists(source_dir + "/RUN%d/" % run):
+        break
+    mkdir(staging_dir + "/RUN%d/" % run)
+    for clone in itertools.count():
+        if not os.path.exists(source_dir + "/RUN%d/CLONE%d/" % (run, clone)):
+            break
+        mkdir(staging_dir + "/RUN%d/CLONE%d/" % (run, clone))
+
+        n_gens = len(glob.glob("%s/RUN%d/CLONE%d/results-*.tar.bz2" % (source_dir, run, clone)))
+        print(run, clone, n_gens)
+        if n_gens < min_gen:
+            continue
+
+        for gen in itertools.count():
+            in_filename = source_dir + "/RUN%d/CLONE%d/results-%.3d.tar.bz2" % (run, clone, gen)
+            out_filename = staging_dir + "/RUN%d/CLONE%d/frame-%.3d.xtc" % (run, clone, gen)
+            if not os.path.exists(in_filename):
+                break
+            if not os.path.exists(out_filename):
+                print("Extracting %s to %s." % (in_filename, out_filename))
+                archive = tarfile.open(in_filename, mode='r:bz2')
+                archive.extract("positions.xtc")            
+                shutil.move("positions.xtc", out_filename)
+                
