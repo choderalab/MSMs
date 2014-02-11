@@ -14,3 +14,19 @@ Note: MSMBuilder's ConvertDataToHDF.py also handles this, but requires actually 
 5.  Cluster using protocol to be determined by KAB
 6.  BuildMSM and extract strongly connected component.  Build a new project that includes ONLY the trajectory chunks that are strongly connected.  This step of protocol is not present in most MSM pipelines but may be useful for achieving accurate clusterings of datasets built from homology model simulations, some of which are possibly garbage.  Preliminary script to do this is goodtrim.py
 7.  Recluster final trimmed dataset.
+
+
+
+TICA
+----
+
+1.  python generate_atom_pairs.py
+2.  tICA_train.py -d 1 atompairs -a AtomPairs.dat
+3.  Cluster.py -p ProjectInfo.yaml -o TICA tica -f tICAData.h5 -n 7 kcenters -k 100
+
+
+Cluster.py -p ProjectInfo.yaml -o TICA tica -f tICAData.h5 -n 7 kcenters -k 200
+BuildMSM.py -l 1 -a TICA/Assignments.h5 -o TICA/
+PCCA.py -a TICA/Assignments.Fixed.h5 -n 6 -t TICA/tProb.mtx  -o TICA6 -A PCCA+
+BuildMSM.py -l 1 -a TICA6/MacroAssignments.h5 -o TICA6/
+SaveStructures.py -a TICA6/Assignments.Fixed.h5 -c 4 -s -1 -o TICA6/PDBs

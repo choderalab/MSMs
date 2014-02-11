@@ -2,7 +2,7 @@ import mdtraj.io
 import mdtraj as md
 import numpy as np
 
-ass = md.io.loadh("./Data/Assignments.Fixed.h5")["arr_0"]
+ass = md.io.loadh("./Data100/Assignments.Fixed.h5")["arr_0"]
 
 k = 0
 for i in range(500):
