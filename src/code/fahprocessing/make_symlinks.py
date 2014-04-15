@@ -6,7 +6,7 @@ import glob
 
 source_dir = "/cbio/jclab/projects/kyleb/fah/8900/PROJ8900/"
 staging_dir = "/cbio/jclab/projects/kyleb/fah/8900/longtraj_symlinks_PROJ8900/"
-min_gens = 265
+min_gens = 250
 
 def mkdir(path):
     if not os.path.exists(path):
