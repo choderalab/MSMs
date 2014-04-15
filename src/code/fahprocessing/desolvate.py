@@ -4,8 +4,8 @@ import mdtraj
 import itertools
 
 min_num_gen = 325
+stride = 10
 
-#source_dir = "/cbio/jclab/projects/fah/fah-data/PROJ8900/"
 source_dir = "./PROJ8900/"
 out_dir = "./nowater/"
 
@@ -37,5 +37,5 @@ for run in itertools.count():
             for gen in range(num_gen):
                 out_filename = out_dir + "/run%d-clone%d-frame-%.3d.xtc" % (run, clone, gen)
                 if not os.path.exists(out_filename):
-                    trj = mdtraj.load(source_dir + "/RUN%d/CLONE%d/frame-%.3d.xtc" % (run, clone, gen), top=top, atom_indices=atom_indices)
+                    trj = mdtraj.load(source_dir + "/RUN%d/CLONE%d/frame-%.3d.xtc" % (run, clone, gen), top=top, atom_indices=atom_indices, stride=stride)
                     trj.save(out_filename)
