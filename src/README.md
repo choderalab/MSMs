@@ -20,7 +20,7 @@ Note: MSMBuilder's ConvertDataToHDF.py also handles this, but requires actually 
 TICA
 ----
 
-1.  python generate_atom_pairs.py
+1.  python generate_atom_pairs.py (Now use save_heavy_atom_indices.py for random selection of atompairs)
 2.  tICA_train.py -d 1 atompairs -a AtomPairs.dat
 3.  Cluster.py -p ProjectInfo.yaml -o TICA tica -f tICAData.h5 -n 7 kcenters -k 100
 
@@ -48,9 +48,11 @@ data as well.
 pymol:
 
 sa()
+color black, 2hyy
 hide
 show cartoon
 show sticks, resi 310+409
+
 
 
 Thoughts:

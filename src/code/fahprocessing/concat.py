@@ -1,3 +1,4 @@
+import os
 import glob
 import mdtraj as md
 
@@ -16,5 +17,7 @@ for filename in start_files:
     num_gens = len(glob.glob(source_dir + "/run%d-clone%d-frame-*.xtc" % (run, clone)))
     print(run, clone, num_gens)
     filenames = [source_dir + "/run%d-clone%d-frame-%.3d.xtc" % (run, clone, gen) for gen in range(num_gens)]
-    trj = md.load(filenames, top=top)
-    trj.save(out_dir + "/run%d-clone%d.h5")
+    out_filename = out_dir + "/run%d-clone%d.h5" % (run, clone)
+    if not os.path.exists(out_filename):
+        trj = md.load(filenames, top=top)
+        trj.save(out_filename)
