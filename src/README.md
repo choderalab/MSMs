@@ -20,7 +20,7 @@ Note: MSMBuilder's ConvertDataToHDF.py also handles this, but requires actually 
 TICA
 ----
 
-1.  python generate_atom_pairs.py
+1.  python generate_atom_pairs.py (Now use save_heavy_atom_indices.py for random selection of atompairs)
 2.  tICA_train.py -d 1 atompairs -a AtomPairs.dat
 3.  Cluster.py -p ProjectInfo.yaml -o TICA tica -f tICAData.h5 -n 7 kcenters -k 100
 
@@ -30,3 +30,32 @@ BuildMSM.py -l 1 -a TICA/Assignments.h5 -o TICA/
 PCCA.py -a TICA/Assignments.Fixed.h5 -n 6 -t TICA/tProb.mtx  -o TICA6 -A PCCA+
 BuildMSM.py -l 1 -a TICA6/MacroAssignments.h5 -o TICA6/
 SaveStructures.py -a TICA6/Assignments.Fixed.h5 -c 4 -s -1 -o TICA6/PDBs
+
+
+HMSM
+----
+
+Using Robert's new Hidden MSM code, I've developed a pipeline that seems to reproduce the Shukla / Roux results
+without any manual adjusting of parameters.  In his manuscript, Robert has already reported
+this robustness using the older SRC dataset, but it seems to work on our larger src
+data as well.
+
+
+1.  hmsm fit-ghmm -k 3 -l 1 --dir Trajectories/ --ext h5 -a AtomIndices.dat --top system.subset.pdb
+2.  Detect and discard outlier trajectories via a likelihood cutoff.  (Using my script `trim_hmsm.py`)
+3.  Extract PDBs from the HMM state means via save_pdbs.py
+
+pymol:
+
+sa()
+color black, 2hyy
+hide
+show cartoon
+show sticks, resi 310+409
+
+
+
+Thoughts:
+
+1.  The trimming procedure seems to clean up a lot of the heterogeneity in the N and C termini.
+2.  The 3 state models (both trimmed and untrimmed) clearly show breakage of the 
