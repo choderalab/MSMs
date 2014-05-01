@@ -4,6 +4,13 @@ import tarfile
 import itertools
 import glob
 
+class Everything(object):
+    def __contains__(self, other):
+        return True
+
+run_whitelist = [0, 102, 104, 107, 122, 134, 139, 143, 144, 151, 155, 184, 1, 23, 2, 33, 35, 37, 38, 39, 43, 58, 60, 62, 65, 70, 71, 73, 74, 77, 79, 83, 87, 99]
+#run_whitelist = Everything()
+
 source_dir = "/cbio/jclab/projects/fah/fah-data/PROJ8900/"
 staging_dir = "./PROJ8900/"
 min_gen = 250
@@ -13,6 +20,8 @@ def mkdir(path):
         os.mkdir(path)
 
 for run in itertools.count():
+    if run not in run_whitelist:
+        continue
     if not os.path.exists(source_dir + "/RUN%d/" % run):
         break
     mkdir(staging_dir + "/RUN%d/" % run)

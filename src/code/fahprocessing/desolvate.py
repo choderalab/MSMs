@@ -3,6 +3,13 @@ import os
 import mdtraj
 import itertools
 
+class Everything(object):
+    def __contains__(self, other):
+        return True
+
+run_whitelist = [0, 102, 104, 107, 122, 134, 139, 143, 144, 151, 155, 184, 1, 23, 2, 33, 35, 37, 38, 39, 43, 58, 60, 62, 65, 70, 71, 73, 74, 77, 79, 83, 87, 99]
+#run_whitelist = Everything()
+
 min_num_gen = 325
 stride = 10
 
@@ -20,6 +27,9 @@ top = traj.top
 k = 0
 
 for run in itertools.count():
+    if run not in run_whitelist:
+        continue
+    
     if not os.path.exists(source_dir + "/RUN%d/" % run):
         break
 
