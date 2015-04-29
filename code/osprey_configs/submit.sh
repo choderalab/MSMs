@@ -21,10 +21,10 @@
 #PBS -V
 #
 # job name (default = name of script file)
-#PBS -N DENSITY
+#PBS -N OSPREY
 #
 # specify email for notifications
-#PBS -M julie.behr@choderalab.org
+#PBS -M kyle.beauchamp@choderalab.org
 #
 # mail settings (one or more characters)
 # n: do not send mail
