@@ -10,7 +10,4 @@ Xf = np.concatenate(X)
 
 hexbin(Xf[:, 0], Xf[:, 1], bins='log')
 
-clusterer = utils.load("./cluster.pkl")
 
-hexbin(Xf[:, 0], Xf[:, 1], bins='log')
-plot(clusterer.cluster_centers_[:, 0], clusterer.cluster_centers_[:, 1], 'kx', markersize=16)

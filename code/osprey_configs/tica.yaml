@@ -1,0 +1,35 @@
+# osprey configuration file.
+#---------------------------
+# usage:
+#  osprey worker config.yaml
+
+estimator:
+    pickle: my-model.pkl
+    entry_point: msmbuilder.decomposition.tICA
+    eval: |
+        Pipeline([
+            ('tica', tICA(n_components=10, lag_time=1))
+        ])
+    eval_scope: msmbuilder
+
+
+strategy:
+    name: hyperopt_tpe  # or moe, hyperopt_tpe
+
+search_space:
+  tica__gamma:
+    min: 1e-3
+    max: 1e-1
+    type: float
+    warp: log       # optimize using the log of the parameter
+
+cv: 5  # the order of K-fold cross validation to use
+
+dataset_loader:
+  name: msmbuilder
+  params:
+    path: ./dihedrals
+    
+
+trials:
+  uri: sqlite:///tica.db

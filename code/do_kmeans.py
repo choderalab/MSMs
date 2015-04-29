@@ -15,7 +15,7 @@ n_first = 4
 n_components = 14
 
 slicer = featurizer.FirstSlicer(n_first)
-clusterer = cluster.GMM(n_components=n_components)
+clusterer = cluster.KMeans(n_clusters=25)
 msm_model = msm.MarkovStateModel()
 
 pipeline = make_pipeline(slicer, clusterer, msm_model)
