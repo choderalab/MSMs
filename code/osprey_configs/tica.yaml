@@ -18,8 +18,8 @@ strategy:
 
 search_space:
   tica__gamma:
-    min: 1e-3
-    max: 1e-1
+    min: 5e-4
+    max: 2e-1
     type: float
     warp: log       # optimize using the log of the parameter
 
