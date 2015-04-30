@@ -8,7 +8,7 @@ estimator:
     entry_point: msmbuilder.decomposition.tICA
     eval: |
         Pipeline([
-            ('tica', tICA(n_components=10, lag_time=1))
+            ('tica', tICA(n_components=15, lag_time=1))
         ])
     eval_scope: msmbuilder
 

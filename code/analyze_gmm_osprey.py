@@ -2,21 +2,26 @@ import osprey.config, osprey.trials
 import pandas as pd
 import seaborn as sns
 
-n_clusters_key = "clusterer__n_clusters"  # This will change depending on the type of clustering
+name = "gmm"
+#name = "kmeans"
 
-config = osprey.config.Config("./config.yaml")
+key0 = "slicer__first"
+key1 = {"gmm":"clusterer__n_components", "kmeans":"clusterer__n_clusters", "tica":"tica__gamma"}[name]
 
-session = config.trials()
-items = [cursor.to_dict() for cursor in session.query(osprey.trials.Trial).all()]
-df = pd.DataFrame(items).set_index('id')
+config = osprey.config.Config("./%s.yaml" % name)
+df = config.to_dataframe()
 
-for key in df.iloc[0].parameters.keys():
-    df[key] = df.parameters.map(lambda x: x[key])
-
-
-X = df.pivot_table(index="slicer__first", columns=n_clusters_key, values="mean_test_score")
+figure()
+X = df.pivot_table(index=key0, columns=key1, values="mean_test_score")
 sns.heatmap(X, square=True, cmap='rainbow')
+title("Test Score")
 
-Y = df[["slicer__first", n_clusters_key, "mean_test_score"]].sort("mean_test_score")
+figure()
+X = df.pivot_table(index=key0, columns=key1, values="mean_train_score")
+sns.heatmap(X, square=True, cmap='rainbow')
+title("Train Score")
+
+Y = df[[key0, key1, "mean_test_score"]].sort("mean_test_score").dropna()
 Y
 
+df[[key0, key1, "mean_test_score"]].dropna()

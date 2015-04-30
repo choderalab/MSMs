@@ -15,7 +15,7 @@
 #   ppn: number of processes per node
 #  gpus: number of gpus per node
 #  GPUs are in 'exclusive' mode by default, but 'shared' keyword sets them to shared mode.
-#PBS -l nodes=1:ppn=1:gpus=1:exclusive
+#PBS -l nodes=1:ppn=8
 #
 # export all my environment variables to the job
 #PBS -V
@@ -43,4 +43,4 @@ cd $PBS_O_WORKDIR
 
 echo $HOSTNAME
 
-osprey worker tica.yaml -n 4 > osprey.$PBS_JOBID.log
+osprey worker tica.yaml -n 1 > osprey.$PBS_JOBID.log

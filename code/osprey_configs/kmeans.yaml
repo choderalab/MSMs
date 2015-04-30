@@ -10,7 +10,7 @@ estimator:
         Pipeline([
                 ("slicer", FirstSlicer()),
                 ("clusterer", KMeans()),
-                ("msm", MarkovStateModel(n_timescales=5, lag_time=1))
+                ("msm", MarkovStateModel(n_timescales=8, lag_time=50))
         ])
     eval_scope: msmbuilder
 
@@ -21,10 +21,10 @@ strategy:
 search_space:
   slicer__first:
     min: 2
-    max: 6
+    max: 20
     type: int
 
-  clusterer__n_components:
+  clusterer__n_clusters:
     min: 10
     max: 50
     type: int

@@ -11,11 +11,11 @@ Xf = np.concatenate(X)
 tica_model = utils.load("./tica.pkl")
 dih_model = utils.load("./dihedrals/model.pkl")
 
-n_first = 4
-n_components = 14
+n_first = 17
+n_clusters = 9
 
 slicer = featurizer.FirstSlicer(n_first)
-clusterer = cluster.KMeans(n_clusters=25)
+clusterer = cluster.KMeans(n_clusters=n_clusters)
 msm_model = msm.MarkovStateModel()
 
 pipeline = make_pipeline(slicer, clusterer, msm_model)
@@ -34,6 +34,6 @@ for k, t in enumerate(samples):
 Y = p0.transform(samples)
 
 hexbin(Xf[:, 0], Xf[:, 1], bins='log')
-plot(clusterer.means_[:, 0], clusterer.means_[:, 1], 'k+', markersize=12, markeredgewidth=3)
-map(lambda k: annotate(k, xy=clusterer.means_[k, 0:2], fontsize=24), arange(n_components))
-map(lambda y: plot(y[:, 0], y[:, 1], 'x', markersize=8, markeredgewidth=2), Y)
+plot(clusterer.cluster_centers_[:, 0], clusterer.cluster_centers_[:, 1], 'k+', markersize=12, markeredgewidth=3)
+map(lambda k: annotate(k, xy=clusterer.cluster_centers_[k, 0:2], fontsize=24), arange(n_clusters))
+#map(lambda y: plot(y[:, 0], y[:, 1], 'x', markersize=8, markeredgewidth=2), Y)
