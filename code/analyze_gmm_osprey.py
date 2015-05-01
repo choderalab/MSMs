@@ -23,5 +23,3 @@ title("Train Score")
 
 Y = df[[key0, key1, "mean_test_score"]].sort("mean_test_score").dropna()
 Y
-
-df[[key0, key1, "mean_test_score"]].dropna()
