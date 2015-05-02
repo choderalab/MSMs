@@ -5,9 +5,9 @@ timestep = 0.25
 
 df = {}
 for tica_lagtime in [1, 2, 10, 50, 100, 400, 800, 1600]:
-    tica_model = utils.load("./tica%d.pkl" % tica_lagtime)
-    df[tica_lagtime * timestep] = tica_model.timescales_
-    X = dataset.dataset("./tica%d.h5" % tica_lagtime)
+    tica_model = utils.load("./tica/tica%d.pkl" % tica_lagtime)
+    df[tica_lagtime * timestep] = tica_model.timescales_ * timestep
+    X = dataset.dataset("./tica/tica%d.h5" % tica_lagtime)
     Xf = np.concatenate(X)
     figure()
     hexbin(Xf[:, 0], Xf[:, 1], bins='log')
