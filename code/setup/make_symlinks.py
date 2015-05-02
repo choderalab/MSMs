@@ -6,7 +6,7 @@ import glob
 import mdtraj as md
 import os
 
-PROJECT = 10468
+PROJECT = 10466
 MIN_LENGTH = 1000 * 4
 
 PATH = "/home/kyleb/dat/fah_data/%d/" % PROJECT
