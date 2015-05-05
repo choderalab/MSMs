@@ -6,7 +6,7 @@ import glob
 import mdtraj as md
 import os
 
-RUN = 1
+RUN = 1  # Set to either None or the run number of interest.
 PROJECT = 10478
 #MIN_LENGTH = 1000 * 4  # kinase, T4
 MIN_LENGTH = 400 * 4  # setd8
