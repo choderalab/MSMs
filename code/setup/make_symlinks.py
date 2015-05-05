@@ -6,8 +6,10 @@ import glob
 import mdtraj as md
 import os
 
-PROJECT = 10466
-MIN_LENGTH = 1000 * 4
+RUN = 1
+PROJECT = 10478
+#MIN_LENGTH = 1000 * 4  # kinase, T4
+MIN_LENGTH = 400 * 4  # setd8
 
 PATH = "/home/kyleb/dat/fah_data/%d/" % PROJECT
 
@@ -19,7 +21,8 @@ except:
     pass
 
 for filename in filenames:
-    base_filename = os.path.split(filename)[1]
-    out_filename = "./trajectories/%s" % (base_filename)
-    if not os.path.exists(out_filename):
-        os.symlink(filename, out_filename)
+    if RUN is None or "run%d" % RUN in filename:
+        base_filename = os.path.split(filename)[1]
+        out_filename = "./trajectories/%s" % (base_filename)
+        if not os.path.exists(out_filename):
+            os.symlink(filename, out_filename)
