@@ -14,7 +14,7 @@ tica_model = utils.load("./tica/tica%d.pkl" % tica_lagtime)
 dih_model = utils.load("./dihedrals/model.pkl")
 
 n_first = 2
-n_components = 4
+n_components = 1
 
 slicer = featurizer.FirstSlicer(n_first)
 clusterer = cluster.GMM(n_components=n_components)

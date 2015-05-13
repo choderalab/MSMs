@@ -1,4 +1,4 @@
-# NOTE: THIS USES THE SYNTAX OF LATEST PULL REQUEST OF MSMB
+# NOTE: THIS USES THE SYNTAX OF LATEST MSMB github version
 # Do dihedral featurization and tICA, making a semi-motivated GUESS for the features, lagtime, and gamma
 
 msmb DihedralFeaturizer --trjs "trajectories/*.h5" --transformed dihedrals --types "phi" "psi" "chi1" "chi2" --out dihedrals/model.pkl

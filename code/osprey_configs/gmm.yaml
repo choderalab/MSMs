@@ -1,8 +1,3 @@
-# osprey configuration file.
-#---------------------------
-# usage:
-#  osprey worker config.yaml
-
 estimator:
     pickle: my-model.pkl
     entry_point: msmbuilder.decomposition.tICA
@@ -10,7 +5,7 @@ estimator:
         Pipeline([
                 ("slicer", FirstSlicer()),
                 ("clusterer", GMM()),
-                ("msm", MarkovStateModel(n_timescales=8, lag_time=50))
+                ("msm", MarkovStateModel(n_timescales=8, lag_time=400))
         ])
     eval_scope: msmbuilder
 
@@ -34,7 +29,7 @@ cv: 5  # the order of K-fold cross validation to use
 dataset_loader:
   name: msmbuilder
   params:
-    path: ./tica.h5
+    path: ./tica400_012.h5
     
 
 trials:

@@ -2,8 +2,9 @@ import osprey.config, osprey.trials
 import pandas as pd
 import seaborn as sns
 
-name = "gmm"
+#name = "gmm"
 #name = "kmeans"
+name = "tica"
 
 key0 = "slicer__first"
 key1 = {"gmm":"clusterer__n_components", "kmeans":"clusterer__n_clusters", "tica":"tica__gamma"}[name]

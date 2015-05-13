@@ -7,16 +7,17 @@ df = {}
 for tica_lagtime in [1, 2, 10, 50, 100, 400, 800, 1600]:
     tica_model = utils.load("./tica/tica%d.pkl" % tica_lagtime)
     df[tica_lagtime * timestep] = tica_model.timescales_ * timestep
-    X = dataset.dataset("./tica/tica%d.h5" % tica_lagtime)
-    Xf = np.concatenate(X)
-    figure()
-    hexbin(Xf[:, 0], Xf[:, 1], bins='log')
-    title("Lagtime %f ns " % (tica_lagtime * timestep))
 
 df = pd.DataFrame(df)
 
 figure()
 df.ix[0].plot(style='o')
+df.ix[1].plot(style='o')
+df.ix[2].plot(style='o')
 yscale('log')
 xscale('log')
-df.ix[0].plot()
+df.ix[0].plot(style='b')
+ylabel("Timescales [ns]")
+xlabel("Lagtime [ns]")
+title("Top 3 Implied Timescales")
+savefig("implied_timescales.png", bbox_inches="tight")

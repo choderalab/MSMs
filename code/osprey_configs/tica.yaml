@@ -1,14 +1,9 @@
-# osprey configuration file.
-#---------------------------
-# usage:
-#  osprey worker config.yaml
-
 estimator:
     pickle: my-model.pkl
     entry_point: msmbuilder.decomposition.tICA
     eval: |
         Pipeline([
-            ('tica', tICA(n_components=15, lag_time=50))
+            ('tica', tICA(n_components=20, lag_time=400))
         ])
     eval_scope: msmbuilder
 
@@ -26,7 +21,7 @@ search_space:
 cv: 5  # the order of K-fold cross validation to use
 
 dataset_loader:
-  name: msmbuilder
+  name: mdtraj
   params:
     path: ./dihedrals
     

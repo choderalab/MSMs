@@ -1,17 +1,19 @@
 """
 Make trajectory symlinks in local trajectories directory.
+Looks for FAH data at the location given by environment variable
+FAH_DATA_PATH
 """
 
 import glob
 import mdtraj as md
 import os
 
-RUN = 1  # Set to either None or the run number of interest.
-PROJECT = 10478
-#MIN_LENGTH = 1000 * 4  # kinase, T4
-MIN_LENGTH = 400 * 4  # setd8
+RUN = None  # Set to either None or the run number of interest.
+PROJECT = 10468
+MIN_LENGTH = 1000 * 4  # kinase, T4
+#MIN_LENGTH = 400 * 4  # setd8
 
-PATH = "/home/kyleb/dat/fah_data/%d/" % PROJECT
+PATH = "%s/%d/" % (os.environ["FAH_DATA_PATH"], PROJECT)
 
 filenames = [filename for filename in glob.glob(PATH + "run*.h5") if len(md.open(filename)) > MIN_LENGTH]
 
