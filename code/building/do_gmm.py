@@ -3,18 +3,19 @@ Build a GMM-MSM on tICA coordinates and plot the first two TICS with labels.
 """
 from msmbuilder import example_datasets, cluster, msm, featurizer, lumping, utils, dataset, decomposition
 from sklearn.pipeline import make_pipeline
+import os
 
-tica_lagtime = 1600
+sysname = os.path.split(os.getcwd())[-1]
 
 dih = dataset.NumpyDirDataset("./dihedrals/")
-X = dataset.dataset("./tica/tica%d.h5" % tica_lagtime)
+X = dataset.dataset("./tica/tica.h5")
 Xf = np.concatenate(X)
 
-tica_model = utils.load("./tica/tica%d.pkl" % tica_lagtime)
+tica_model = utils.load("./tica/tica.pkl")
 dih_model = utils.load("./dihedrals/model.pkl")
 
-n_first = 2
-n_components = 1
+n_first = 16
+n_components = 13
 
 slicer = featurizer.FirstSlicer(n_first)
 clusterer = cluster.GMM(n_components=n_components)
@@ -51,3 +52,9 @@ hexbin(Xf[:, 0], Xf[:, 1], bins='log')
 plot(clusterer.means_[:, 0], clusterer.means_[:, 1], 'k+', markersize=12, markeredgewidth=3)
 map(lambda k: annotate(k, xy=clusterer.means_[k, 0:2], fontsize=24), arange(n_components))
 map(lambda y: plot(y[:, 0], y[:, 1], 'x', markersize=8, markeredgewidth=2), Y)
+
+title("tICA with GMM: %s" % sysname)
+xlabel("Slowest tIC")
+ylabel("Second Slowest tIC")
+
+savefig("./%s_tica_with_%d_states.png" % (sysname, n_components), bbox_inches="tight")

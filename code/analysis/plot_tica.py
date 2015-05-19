@@ -18,7 +18,7 @@ hexbin(Xf[:, 0], Xf[:, 1], bins='log')
 
 tica_model.timescales_
 
-title("TICA: lagtime %d (%.3f)" % (tica_lagtime, dt * tica_lagtime))
+title("tICA: lagtime %d (%.3f)" % (tica_lagtime, dt * tica_lagtime))
 xlabel("Slowest tIC")
 ylabel("Second Slowest tIC")
 savefig("./%s_tica_lag%d%s.png" % (sysname, tica_lagtime, regularization_string), bbox_inches="tight")
