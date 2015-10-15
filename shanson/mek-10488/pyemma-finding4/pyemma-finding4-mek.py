@@ -56,13 +56,15 @@ coor.pipeline([coordinates_source,running_tica])
 plt.clf()
 eigenvalues = (running_tica.eigenvalues)**2
 
-sum_eigenvalues = np.sum(eigenvalues[0:1])
+sum_eigenvalues = np.sum(eigenvalues[0:2])
 
 print "This is the sum of the first two eigenvalues: %s." % sum_eigenvalues
 
 plt.plot(eigenvalues)
-
-plt.savefig('eigenvalues.png')
+plt.xlim(0,4)
+plt.ylim(0,1.2)
+plt.annotate('sum first two: %s.' % sum_eigenvalues, xy=(0.25,0.1))
+plt.savefig('pyemma-eigenvalues.png')
 
 ################################################################################
 # Make tics plot

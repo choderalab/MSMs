@@ -39,13 +39,15 @@ X = tica.fit_transform(dihedrals)
 plt.clf()
 eigenvalues = (tica.eigenvalues_)**2
 
-sum_eigenvalues = np.sum(eigenvalues[0:1])
+sum_eigenvalues = np.sum(eigenvalues[0:2])
 
 print "This is the sum of the first two eigenvalues: %s." % sum_eigenvalues
 
 plt.plot(eigenvalues)
-
-plt.savefig('eigenvalues.png')
+plt.xlim(0,4)
+plt.ylim(0,1.2)
+plt.annotate('sum first two: %s.' % sum_eigenvalues, xy=(0.25,0.1))
+plt.savefig('msmb-eigenvalues.png')
 
 ################################################################################
 # plot first two tics
