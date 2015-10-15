@@ -21,26 +21,43 @@ source_directory = '/cbio/jclab/projects/fah/fah-data/munged/no-solvent/10488'
 print ('loading trajectories...')
 filenames = glob(os.path.join(source_directory, '*0.h5'))
 trajectories = [md.load(filename) for filename in filenames]
-print "We are analyzing %s sims." % len(trajectories)
+print "We are analyzing %s trajectories." % len(trajectories)
 
 ################################################################################
-# Initialize dihedral and tICA features
+# initialize dihedral and tICA features
 ################################################################################
 
-print('Initializing dihedral and tICA features...')
+print('initializing dihedral and tICA features...')
 dihedrals = featurizer.DihedralFeaturizer(types=["phi", "psi", "chi1", "chi2"]).transform(trajectories)
 tica = decomposition.tICA(n_components = 4,lag_time= 1600)
 X = tica.fit_transform(dihedrals)
 
 ################################################################################
-# Plot first two tics
+# Make eigenvalues plot
 ################################################################################
+
+plt.clf()
+eigenvalues = (tica.eigenvalues_)**2
+
+sum_eigenvalues = np.sum(eigenvalues[0:1])
+
+print "This is the sum of the first two eigenvalues: %s." % sum_eigenvalues
+
+plt.plot(eigenvalues)
+
+plt.savefig('eigenvalues.png')
+
+################################################################################
+# plot first two tics
+################################################################################
+
+plt.clf()
 
 Xf = np.concatenate(X)
 plt.hexbin(Xf[:,0], Xf[:, 1], bins='log')
 plt.title("Dihedral tICA Analysis")
-plt.xlabel("Slowest Coordinate")
-plt.ylabel("Second Slowest Coordinate")
+plt.xlabel("tic 1")
+plt.ylabel("tic 2")
 
 plt.savefig("msmbuilder-finding4-mek.png", bbox_inches="tight")
 
