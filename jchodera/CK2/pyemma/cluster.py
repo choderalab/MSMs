@@ -3,10 +3,12 @@
 import pyemma
 import numpy as np
 import mdtraj
+import time
 import os
 
 # Source directory
-source_directory = '/cbio/jclab/projects/fah/fah-data/munged-with-time/no-solvent/11406' # CK2
+#source_directory = '/cbio/jclab/projects/fah/fah-data/munged-with-time/no-solvent/11406' # CK2
+source_directory = '11406' # CK2
 
 ################################################################################
 # Load reference topology
@@ -33,7 +35,7 @@ featurizer.add_all()
 
 import pyemma.coordinates
 from glob import glob
-trajectory_filenames = glob(os.path.join(source_directory, 'run0-clone?.h5'))
+trajectory_filenames = glob(os.path.join(source_directory, 'run*-clone*.h5'))
 coordinates_source = pyemma.coordinates.source(trajectory_filenames, features=featurizer)
 print("There are %d frames total in %d trajectories." % (coordinates_source.n_frames_total(), coordinates_source.number_of_trajectories()))
 
@@ -47,10 +49,14 @@ nframes = coordinates_source.n_frames_total()
 nstates = int(nframes / generator_ratio)
 stride = 4
 metric = 'minRMSD'
+initial_time = time.time()
 clustering = pyemma.coordinates.cluster_uniform_time(data=coordinates_source, k=nstates, stride=stride, metric=metric)
-dtrajs = clustering.dtrajs
+final_time = time.time()
+elapsed_time = final_time - initial_time
+print('Elapsed time %.3f s' % elapsed_time)
 
 # Save discrete trajectories.
+dtrajs = clustering.dtrajs
 dtrajs_dir = 'dtrajs'
 clustering.save_dtrajs(output_dir=dtrajs_dir, output_format='npy', extension='.npy')
 

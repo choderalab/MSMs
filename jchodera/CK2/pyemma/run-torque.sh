@@ -3,7 +3,7 @@
 #
 #
 # walltime : maximum wall clock time (hh:mm:ss)
-#PBS -l walltime=24:00:00
+#PBS -l walltime=48:00:00
 #
 # join stdout and stderr
 #PBS -j oe
@@ -16,7 +16,9 @@
 #
 # nodes: number of nodes
 #   ppn: how many cores per node to use
-#PBS -l nodes=1:ppn=1
+#PBS -l nodes=1:ppn=32
+#
+#PBS -l mem=96G
 #
 # export all my environment variables to the job
 ##PBS -V
@@ -33,7 +35,9 @@ rm -rf pyemma.log dtrajs
 # Run the simulation with verbose output:
 date
 export MPLBACKEND="agg"
-python cluster.py
+
+export OMP_NUM_THREADS=32
+echo $OMP_NUM_THREADS
 date
-
-
+time python cluster.py
+date
