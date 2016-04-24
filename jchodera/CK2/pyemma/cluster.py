@@ -44,10 +44,10 @@ print("There are %d frames total in %d trajectories." % (coordinates_source.n_fr
 ################################################################################
 
 print('Clustering...')
-generator_ratio = 100
+generator_ratio = 200
 nframes = coordinates_source.n_frames_total()
 nstates = int(nframes / generator_ratio)
-stride = 4
+stride = 1
 metric = 'minRMSD'
 initial_time = time.time()
 clustering = pyemma.coordinates.cluster_uniform_time(data=coordinates_source, k=nstates, stride=stride, metric=metric)
@@ -71,7 +71,7 @@ import matplotlib.pyplot as plt
 from pyemma import msm
 from pyemma import plots
 
-lags = [1,2,5,10]
+lags = [1,2,5,10,20,50]
 its = msm.its(dtrajs, lags=lags, errors='bayes')
 plots.plot_implied_timescales(its)
 
