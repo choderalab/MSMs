@@ -1,0 +1,2 @@
+03-05-16 18:23:36 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=1
+03-05-16 18:25:27 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[3] WARNING  Some timescales could not be computed. Timescales array is smaller than expected or contains NaNs
