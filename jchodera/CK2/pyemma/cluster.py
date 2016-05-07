@@ -55,6 +55,9 @@ final_time = time.time()
 elapsed_time = final_time - initial_time
 print('Elapsed time %.3f s' % elapsed_time)
 
+# Save cluster centers
+np.save('clustercenters', clustering.clustercenters)
+
 # Save discrete trajectories.
 dtrajs = clustering.dtrajs
 dtrajs_dir = 'dtrajs'

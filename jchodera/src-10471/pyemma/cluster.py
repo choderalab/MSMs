@@ -7,6 +7,7 @@ import os
 
 # Source directory
 source_directory = '/cbio/jclab/projects/fah/fah-data/munged/no-solvent/10471'
+source_directory = '/cbio/jclab/projects/fah/fah-data/munged/no-solvent/10490'
 
 ################################################################################
 # Load reference topology

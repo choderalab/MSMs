@@ -62,6 +62,11 @@ final_time = time.time()
 elapsed_time = final_time - initial_time
 print('Elapsed time %.3f s' % elapsed_time)
 
+# Save cluster centers
+#import cPickle as pickle
+#pickle.dump(clustering.clustercenters, open('clustercenters.p', 'wb'))
+np.save('clustercenters.npy', clustering.clustercenters)
+
 # Save discrete trajectories.
 dtrajs = clustering.dtrajs
 dtrajs_dir = 'dtrajs'
