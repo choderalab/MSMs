@@ -1,0 +1,85 @@
+03-05-16 21:23:21 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+05-05-16 10:17:31 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=1
+05-05-16 10:19:14 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[3] WARNING  Some timescales could not be computed. Timescales array is smaller than expected or contains NaNs
+05-05-16 10:20:26 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+05-05-16 22:53:35 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=1
+05-05-16 22:55:31 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+05-05-16 22:55:33 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+05-05-16 22:55:33 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+05-05-16 22:55:34 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+05-05-16 22:55:34 pyemma.msm.estimators.bayesian_msm.BayesianMSM[7] WARNING  Ignored error during estimation: 
+05-05-16 22:55:34 pyemma.msm.estimators.bayesian_msm.BayesianMSM[8] WARNING  Ignored error during estimation: 
+06-05-16 23:04:13 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:05:29 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:09:02 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:09:27 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:09:28 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:09:28 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+06-05-16 23:09:28 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+06-05-16 23:09:28 pyemma.msm.estimators.bayesian_msm.BayesianMSM[7] WARNING  Ignored error during estimation: 
+06-05-16 23:09:28 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[8] WARNING  Estimation has failed at lagtimes: [ 2  5 10 20 50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:10:54 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=1
+06-05-16 23:12:10 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[3] WARNING  Some timescales could not be computed. Timescales array is smaller than expected or contains NaNs
+06-05-16 23:17:00 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:17:37 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:17:37 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:17:37 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+06-05-16 23:17:37 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[6] WARNING  Estimation has failed at lagtimes: [10 20 50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:18:13 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:19:31 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:19:31 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[4] WARNING  Estimation has failed at lagtimes: [50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:20:00 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:20:15 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:20:16 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:20:16 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+06-05-16 23:20:16 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+06-05-16 23:20:16 pyemma.msm.estimators.bayesian_msm.BayesianMSM[7] WARNING  Ignored error during estimation: 
+06-05-16 23:20:16 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[8] WARNING  Estimation has failed at lagtimes: [ 2  5 10 20 50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:20:46 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:21:09 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:21:10 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:21:10 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+06-05-16 23:21:10 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+06-05-16 23:21:10 pyemma.msm.estimators.bayesian_msm.BayesianMSM[7] WARNING  Ignored error during estimation: 
+06-05-16 23:21:10 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[8] WARNING  Estimation has failed at lagtimes: [ 2  5 10 20 50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:21:41 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:44:17 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:45:33 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:45:33 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:45:33 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[5] WARNING  Estimation has failed at lagtimes: [20 50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:46:14 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:47:10 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[3] WARNING  Some timescales could not be computed. Timescales array is smaller than expected or contains NaNs
+06-05-16 23:50:06 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:50:51 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:50:52 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:50:52 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+06-05-16 23:50:52 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+06-05-16 23:50:52 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[7] WARNING  Estimation has failed at lagtimes: [ 5 10 20 50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:51:45 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:52:08 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:52:09 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:52:09 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+06-05-16 23:52:09 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+06-05-16 23:52:09 pyemma.msm.estimators.bayesian_msm.BayesianMSM[7] WARNING  Ignored error during estimation: 
+06-05-16 23:52:09 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[8] WARNING  Estimation has failed at lagtimes: [ 2  5 10 20 50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:52:56 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:53:21 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:53:21 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:53:21 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+06-05-16 23:53:21 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+06-05-16 23:53:21 pyemma.msm.estimators.bayesian_msm.BayesianMSM[7] WARNING  Ignored error during estimation: 
+06-05-16 23:53:21 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[8] WARNING  Estimation has failed at lagtimes: [ 2  5 10 20 50]. Run single-lag estimation at these lags to track down the error.
+06-05-16 23:54:13 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+06-05-16 23:54:28 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+06-05-16 23:54:28 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+06-05-16 23:54:28 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+06-05-16 23:54:29 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+06-05-16 23:54:29 pyemma.msm.estimators.bayesian_msm.BayesianMSM[7] WARNING  Ignored error during estimation: 
+06-05-16 23:54:29 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[8] WARNING  Estimation has failed at lagtimes: [ 2  5 10 20 50]. Run single-lag estimation at these lags to track down the error.
+07-05-16 00:01:42 pyemma.coordinates.clustering.uniform_time.UniformTimeClustering[0] INFO     number of threads obtained from env variable 'OMP_NUM_THREADS'=8
+07-05-16 00:02:02 pyemma.msm.estimators.bayesian_msm.BayesianMSM[3] WARNING  Ignored error during estimation: 
+07-05-16 00:02:02 pyemma.msm.estimators.bayesian_msm.BayesianMSM[4] WARNING  Ignored error during estimation: 
+07-05-16 00:02:02 pyemma.msm.estimators.bayesian_msm.BayesianMSM[5] WARNING  Ignored error during estimation: 
+07-05-16 00:02:02 pyemma.msm.estimators.bayesian_msm.BayesianMSM[6] WARNING  Ignored error during estimation: 
+07-05-16 00:02:02 pyemma.msm.estimators.bayesian_msm.BayesianMSM[7] WARNING  Ignored error during estimation: 
+07-05-16 00:02:02 pyemma.msm.estimators.implied_timescales.ImpliedTimescales[8] WARNING  Estimation has failed at lagtimes: [ 2  5 10 20 50]. Run single-lag estimation at these lags to track down the error.
