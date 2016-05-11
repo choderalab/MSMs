@@ -1,0 +1,18 @@
+/cbio/jclab/home/hansons/opt/anaconda/lib/python2.7/site-packages/pyEMMA-2.0.1-py2.7-linux-x86_64.egg/pyemma/coordinates/util/stat.py:31: DeprecationWarning: Call to deprecated function hist. Called from pyemma.coordinates.util.stat line 31. Please use pyemma.coordinates.histogram()
+  def hist(transform, dimensions, nbins):
+loading reference topology...
+Initializing msmbuilder dihedrals featurizer...
+There are 58840 frames total in 45 trajectories.
+tICA...
+calculate covariances:  85% (521/608) [####################################################################            ] eta 01:28 /2015-10-23 17:50:58,860 coordinates.transform.TICA[0] WARNING  Had to skip 87 trajectories for being too short. Their indexes are in self._skipped_trajs.
+This is the sum of the first two eigenvalues: 3.60002302104.
+These are the input features most strongly correlated with each tIC:
+	tIC1: DIH: COS(TYR 172 N 2709 -  TYR 172 CA 2711 - TYR 172 C 2728 - SER 173 N 2730)
+		with correlation of 0.850
+	tIC2: DIH: SIN(PRO 228 C 3569 -  LEU 229 N 3571 - LEU 229 CA 3573 - LEU 229 C 3588)
+		with correlation of 0.846
+	tIC3: DIH: SIN(ASN 153 C 2428 -  SER 154 N 2430 - SER 154 CA 2432 - SER 154 C 2439)
+		with correlation of -0.532
+	tIC4: DIH: COS(VAL 13 N 175 -  VAL 13 CA 177 - VAL 13 C 189 - VAL 14 N 191)
+		with correlation of 0.784
+getting output of TICA: 100% (608/608) [###############################################################################] eta 00:01 /

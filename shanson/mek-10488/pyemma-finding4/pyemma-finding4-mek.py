@@ -71,7 +71,8 @@ plt.savefig('pyemma-eigenvalues.png')
 ################################################################################
 
 plt.clf()
-tics = running_tica.get_output()[0]
+tics = running_tica.get_output()
+tics = np.vstack(tics)
 
 plt.hexbin(tics[:,0], tics[:, 1], bins='log')
 plt.title("Dihedral tICA Analysis")
